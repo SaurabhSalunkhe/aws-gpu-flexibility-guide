@@ -1,0 +1,895 @@
+{
+  "checked_on": "2026-10-11",
+  "schema_version": 1,
+  "purpose": "Research candidate catalog; not a deployment allowlist or account-level capacity verification.",
+  "unit_policy": "Preserve source labels. Nominal GB is not a guaranteed application-allocatable capacity. Null means unverified or deliberately not normalized.",
+  "source_urls": {
+    "ec2_specs": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+    "g6": "https://aws.amazon.com/ec2/instance-types/g6/",
+    "g6e": "https://aws.amazon.com/ec2/instance-types/g6e/",
+    "g7e": "https://aws.amazon.com/ec2/instance-types/g7e/",
+    "p4": "https://aws.amazon.com/ec2/instance-types/p4/",
+    "p5": "https://aws.amazon.com/ec2/instance-types/p5/",
+    "p6": "https://aws.amazon.com/ec2/instance-types/p6/",
+    "b200_launch": "https://aws.amazon.com/blogs/aws/new-amazon-ec2-p6-b200-instances-powered-by-nvidia-blackwell-gpus-to-accelerate-ai-innovations/",
+    "b300_launch": "https://aws.amazon.com/blogs/aws/accelerate-large-scale-ai-applications-with-the-new-amazon-ec2-p6-b300-instances/",
+    "b300_ga": "https://aws.amazon.com/about-aws/whats-new/2025/11/amazon-ec2-p6-b300-instances-nvidia-blackwell-ultra-gpus-available/",
+    "g7e_ga": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-g7e-instances-generally-available/",
+    "regions": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-regions.html",
+    "capacity_blocks": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html",
+    "nvidia_hgx": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html",
+    "nvidia_graphics": "https://docs.nvidia.com/vgpu/sizing/virtual-workstation/latest/gpus-vws.html",
+    "nvidia_l40s": "https://www.nvidia.com/en-us/data-center/l40s/",
+    "nvidia_l4": "https://www.nvidia.com/en-us/data-center/l4/",
+    "nvidia_driver": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/public-nvidia-driver.html",
+    "describe_types": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-types.html",
+    "describe_offerings": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-type-offerings.html",
+    "nvidia_smi": "https://docs.nvidia.com/deploy/nvidia-smi/index.html",
+    "blackwell_architecture": "https://aws.amazon.com/blogs/machine-learning/aws-ai-infrastructure-with-nvidia-blackwell-two-powerful-compute-solutions-for-the-next-frontier-of-ai/",
+    "efa": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html"
+  },
+  "instances": [
+    {
+      "instance_type": "g6.xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 1,
+      "vcpu": 4,
+      "host_memory_gib": 16,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 24,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 10,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": true,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.2xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 1,
+      "vcpu": 8,
+      "host_memory_gib": 32,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 24,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 10,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": true,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.4xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 1,
+      "vcpu": 16,
+      "host_memory_gib": 64,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 24,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 25,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": true,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.8xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 1,
+      "vcpu": 32,
+      "host_memory_gib": 128,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 24,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 25,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.12xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 4,
+      "vcpu": 48,
+      "host_memory_gib": 192,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 96,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 40,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.16xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 1,
+      "vcpu": 64,
+      "host_memory_gib": 256,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 24,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 25,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.24xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 4,
+      "vcpu": 96,
+      "host_memory_gib": 384,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 96,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 50,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6.48xlarge",
+      "gpu_model": "NVIDIA L4",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 768,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 24,
+      "nominal_gpu_memory_aggregate_gb": 192,
+      "ec2_spec_reported_per_device_gib": 22,
+      "network_max_gbps": 100,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 1,
+      "vcpu": 4,
+      "host_memory_gib": 32,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 48,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 20,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": true,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.2xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 1,
+      "vcpu": 8,
+      "host_memory_gib": 64,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 48,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 20,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": true,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.4xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 1,
+      "vcpu": 16,
+      "host_memory_gib": 128,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 48,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 20,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.8xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 1,
+      "vcpu": 32,
+      "host_memory_gib": 256,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 48,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 25,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.12xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 4,
+      "vcpu": 48,
+      "host_memory_gib": 384,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 192,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 100,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.16xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 1,
+      "vcpu": 64,
+      "host_memory_gib": 512,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 48,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 35,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.24xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 4,
+      "vcpu": 96,
+      "host_memory_gib": 768,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 192,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g6e.48xlarge",
+      "gpu_model": "NVIDIA L40S",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 1536,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "GDDR6",
+      "nominal_gpu_memory_per_device_gb": 48,
+      "nominal_gpu_memory_aggregate_gb": 384,
+      "ec2_spec_reported_per_device_gib": 44,
+      "network_max_gbps": 400,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "PCIe; no NVLink",
+      "source_ids": [
+        "g6e",
+        "ec2_specs"
+      ],
+      "network_is_burst_ceiling": false,
+      "nvlink": false,
+      "notes": [
+        "Do not equate EFA support with GPUDirect RDMA; RDMA status not established here.",
+        "Nominal product-page GB and EC2-spec GiB labels differ."
+      ]
+    },
+    {
+      "instance_type": "g7e.2xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 1,
+      "vcpu": 8,
+      "host_memory_gib": 64,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 96,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 50,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ]
+    },
+    {
+      "instance_type": "g7e.4xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 1,
+      "vcpu": 16,
+      "host_memory_gib": 128,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 96,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 50,
+      "efa_supported": false,
+      "gpudirect_rdma_supported": null,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ]
+    },
+    {
+      "instance_type": "g7e.8xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 1,
+      "vcpu": 32,
+      "host_memory_gib": 256,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 96,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 100,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": false,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ],
+      "efa_generation": 4
+    },
+    {
+      "instance_type": "g7e.12xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 2,
+      "vcpu": 48,
+      "host_memory_gib": 512,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 192,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 400,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ],
+      "efa_generation": 4
+    },
+    {
+      "instance_type": "g7e.24xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 4,
+      "vcpu": 96,
+      "host_memory_gib": 1024,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 384,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 800,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ],
+      "efa_generation": 4
+    },
+    {
+      "instance_type": "g7e.48xlarge",
+      "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 2048,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "GDDR7",
+      "nominal_gpu_memory_per_device_gb": 96,
+      "nominal_gpu_memory_aggregate_gb": 768,
+      "ec2_spec_reported_per_device_gib": 96,
+      "network_max_gbps": 1600,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "GPUDirect P2P over PCIe; no NVLink",
+      "source_ids": [
+        "g7e",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": false,
+      "notes": [
+        "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+        "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+      ],
+      "efa_generation": 4
+    },
+    {
+      "instance_type": "p4d.24xlarge",
+      "gpu_model": "NVIDIA A100",
+      "gpu_count": 8,
+      "vcpu": 96,
+      "host_memory_gib": 1152,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Platinum 8275CL",
+      "gpu_memory_type": "HBM2",
+      "nominal_gpu_memory_per_device_gb": 40,
+      "nominal_gpu_memory_aggregate_gb": 320,
+      "ec2_spec_reported_per_device_gib": 40,
+      "network_max_gbps": 400,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p4",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": true,
+      "gpu_peer_bandwidth_gbytes_per_second": 600,
+      "efa_generation": 1,
+      "notes": [
+        "Source conflict: AWS P4 product page advertises GPUDirect RDMA; current EFA matrix says GDR unsupported. Verify before relying on it."
+      ],
+      "gpudirect_rdma_source_values": {
+        "aws_product_page": true,
+        "aws_efa_matrix": false
+      }
+    },
+    {
+      "instance_type": "p4de.24xlarge",
+      "gpu_model": "NVIDIA A100",
+      "gpu_count": 8,
+      "vcpu": 96,
+      "host_memory_gib": 1152,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Platinum 8275CL",
+      "gpu_memory_type": "HBM2e",
+      "nominal_gpu_memory_per_device_gb": 80,
+      "nominal_gpu_memory_aggregate_gb": 640,
+      "ec2_spec_reported_per_device_gib": 80,
+      "network_max_gbps": 400,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": null,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p4",
+        "ec2_specs",
+        "efa"
+      ],
+      "nvlink": true,
+      "gpu_peer_bandwidth_gbytes_per_second": 600,
+      "efa_generation": 1,
+      "notes": [
+        "Source conflict: AWS P4 product page advertises GPUDirect RDMA; current EFA matrix says GDR unsupported. Verify before relying on it."
+      ],
+      "gpudirect_rdma_source_values": {
+        "aws_product_page": true,
+        "aws_efa_matrix": false
+      }
+    },
+    {
+      "instance_type": "p5.4xlarge",
+      "gpu_model": "NVIDIA H100",
+      "gpu_count": 1,
+      "vcpu": 16,
+      "host_memory_gib": 256,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "HBM3",
+      "nominal_gpu_memory_per_device_gb": 80,
+      "nominal_gpu_memory_aggregate_gb": 80,
+      "ec2_spec_reported_per_device_gib": 80,
+      "network_max_gbps": 100,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": false,
+      "topology": "Single GPU; no peer",
+      "source_ids": [
+        "p5",
+        "ec2_specs"
+      ],
+      "nvlink": false,
+      "efa_generation": null,
+      "gpu_peer_bandwidth_gbytes_per_second": null
+    },
+    {
+      "instance_type": "p5.48xlarge",
+      "gpu_model": "NVIDIA H100",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 2048,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "HBM3",
+      "nominal_gpu_memory_per_device_gb": 80,
+      "nominal_gpu_memory_aggregate_gb": 640,
+      "ec2_spec_reported_per_device_gib": 80,
+      "network_max_gbps": 3200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p5",
+        "ec2_specs"
+      ],
+      "nvlink": true,
+      "efa_generation": 2,
+      "gpu_peer_bandwidth_gbytes_per_second": 900
+    },
+    {
+      "instance_type": "p5e.48xlarge",
+      "gpu_model": "NVIDIA H200",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 2048,
+      "architecture": "x86_64",
+      "cpu": "AMD EPYC 7R13",
+      "gpu_memory_type": "HBM3e",
+      "nominal_gpu_memory_per_device_gb": 141,
+      "nominal_gpu_memory_aggregate_gb": 1128,
+      "ec2_spec_reported_per_device_gib": 141,
+      "network_max_gbps": 3200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p5",
+        "ec2_specs"
+      ],
+      "nvlink": true,
+      "efa_generation": 2,
+      "gpu_peer_bandwidth_gbytes_per_second": 900
+    },
+    {
+      "instance_type": "p5en.48xlarge",
+      "gpu_model": "NVIDIA H200",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 2048,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Sapphire Rapids",
+      "gpu_memory_type": "HBM3e",
+      "nominal_gpu_memory_per_device_gb": 141,
+      "nominal_gpu_memory_aggregate_gb": 1128,
+      "ec2_spec_reported_per_device_gib": 141,
+      "network_max_gbps": 3200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p5",
+        "ec2_specs"
+      ],
+      "nvlink": true,
+      "efa_generation": 3,
+      "gpu_peer_bandwidth_gbytes_per_second": 900
+    },
+    {
+      "instance_type": "p6-b200.48xlarge",
+      "gpu_model": "NVIDIA B200",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 2048,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "HBM3e",
+      "nominal_gpu_memory_per_device_gb": null,
+      "nominal_gpu_memory_aggregate_gb": null,
+      "ec2_spec_reported_per_device_gib": 179,
+      "network_max_gbps": 3200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "Fifth-generation NVLink/NVSwitch",
+      "source_ids": [
+        "p6",
+        "b200_launch",
+        "ec2_specs"
+      ],
+      "nvlink": true,
+      "efa_generation": 4,
+      "gpu_peer_bandwidth_gbytes_per_second": 1800,
+      "memory_source_values": {
+        "ec2_specs_aggregate_gib": 1432,
+        "aws_product_table_aggregate_gb": 1432,
+        "aws_product_prose_aggregate_gb": 1440,
+        "nvidia_generic_per_device_gb": 180
+      },
+      "notes": [
+        "Conflicting public memory units/values: verify API, nvidia-smi and model load; do not normalize implicitly."
+      ]
+    },
+    {
+      "instance_type": "p6-b300.48xlarge",
+      "gpu_model": "NVIDIA B300",
+      "gpu_count": 8,
+      "vcpu": 192,
+      "host_memory_gib": 4096,
+      "architecture": "x86_64",
+      "cpu": "Intel Xeon Emerald Rapids",
+      "gpu_memory_type": "HBM3e",
+      "nominal_gpu_memory_per_device_gb": null,
+      "nominal_gpu_memory_aggregate_gb": null,
+      "ec2_spec_reported_per_device_gib": 268,
+      "network_max_gbps": 6400,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "NVLink/NVSwitch",
+      "source_ids": [
+        "p6",
+        "b300_launch",
+        "b300_ga",
+        "ec2_specs"
+      ],
+      "nvlink": true,
+      "efa_generation": 4,
+      "gpu_peer_bandwidth_gbytes_per_second": 1800,
+      "dedicated_ena_gbps": 300,
+      "memory_source_values": {
+        "ec2_specs_aggregate_gib": 2148,
+        "ec2_specs_parenthetical_gpu_count": 8,
+        "ec2_specs_parenthetical_per_device_gib": 268,
+        "aws_product_table_aggregate_gb": 2144,
+        "nvidia_generic_per_device_gb": 288
+      },
+      "notes": [
+        "EC2 specs aggregate 2148 GiB conflicts with its own 8 x 268 GiB parenthetical.",
+        "AWS product table 2144 GB and NVIDIA generic 288 GB/device must not be silently treated as the same capacity.",
+        "B300 GA November 18 2025; regional/purchase availability must be checked in account."
+      ]
+    },
+    {
+      "instance_type": "p6e-gb200.36xlarge",
+      "gpu_model": "NVIDIA Blackwell (GB200 Grace Blackwell Superchip)",
+      "gpu_count": 4,
+      "vcpu": 144,
+      "host_memory_gib": 960,
+      "architecture": "arm64",
+      "cpu": "NVIDIA Grace",
+      "gpu_memory_type": "HBM3e",
+      "nominal_gpu_memory_per_device_gb": null,
+      "nominal_gpu_memory_aggregate_gb": null,
+      "ec2_spec_reported_per_device_gib": 185,
+      "network_max_gbps": 3200,
+      "efa_supported": true,
+      "gpudirect_rdma_supported": true,
+      "topology": "UltraServer NVLink domain; NVLink-C2C CPU/GPU",
+      "source_ids": [
+        "p6",
+        "ec2_specs",
+        "blackwell_architecture"
+      ],
+      "nvlink": true,
+      "efa_generation": 4,
+      "requires_ultraserver": true,
+      "memory_source_values": {
+        "aws_product_table_aggregate_gb": 740,
+        "ec2_specs_aggregate_gib": 740
+      },
+      "notes": [
+        "Instance only offered within UltraServers; not a stand-alone four-GPU fallback.",
+        "36- or 72-GPU UltraServer domain sizes are separate from per-instance GPU count."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-11",
+  "policy": "Selected primary-source literature review. No local GPU benchmark was run. Published measurements, vendor claims, simulated results, and unmeasured engineering inferences remain distinct. Results cannot be compared across studies as if they shared conditions.",
+  "sources": [
+    {
+      "id": "study-g7e-minimax",
+      "title": "MiniMax-M2.5 FP8 on RTX PRO 6000, corrected practitioner report",
+      "url": "https://github.com/sgl-project/sglang/issues/18870",
+      "checked_on": "2026-10-11",
+      "publication_date": "2026-02-15",
+      "evidence_type": "practitioner_report",
+      "locator": "Opening post and February 20 follow-up; Results table; What Happened to the +16.8%?",
+      "case": "1",
+      "review_caveat": "self-reported; configuration-specific; no matched other-GPU control",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-g7e-artifacts",
+      "title": "Artifacts linked by G7e benchmark author",
+      "url": "https://gist.github.com/stewtong/980e7b95d03443d81cdd1057582c4518",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "practitioner_artifacts",
+      "locator": "Linked artifact collection",
+      "case": "1",
+      "review_caveat": "Artifact URL verified from original report; artifacts not independently rerun",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-mlperf51",
+      "title": "MLPerf Inference v5.1 result index",
+      "url": "https://docs.mlcommons.org/inference_results_v5.1/",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-09-09",
+      "evidence_type": "standardized_vendor_submissions",
+      "locator": "Available Closed division; IDs 5.1-0051, 5.1-0071, 5.1-0072",
+      "case": "2",
+      "review_caveat": "Metric table is multi-header; inspect underlying records before extracting scores",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-mlperf51-nvidia",
+      "title": "NVIDIA Blackwell Ultra Sets New Inference Records in MLPerf Debut",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-ultra-sets-new-inference-records-in-mlperf-debut/",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-09-09",
+      "evidence_type": "vendor_benchmark_analysis",
+      "locator": "Table 2, Figure 1 and their footnotes",
+      "case": "2",
+      "review_caveat": "Unverified Hopper DeepSeek comparison; derived per-GPU metric; GB300 not B300; open/closed disaggregation confound",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-mlperf50-nvidia",
+      "title": "NVIDIA Blackwell Delivers Massive Performance Leaps in MLPerf Inference v5.0",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-delivers-massive-performance-leaps-in-mlperf-inference-v5-0",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-04-02",
+      "evidence_type": "vendor_benchmark_analysis",
+      "locator": "Hopper continues to improve; Figures 1–2 footnotes",
+      "case": "2",
+      "review_caveat": "Hardware and software together; do not attribute full-system change to one component",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-mlperf51-artifacts",
+      "title": "MLPerf Inference v5.1 submissions",
+      "url": "https://github.com/mlcommons/inference_results_v5.1",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-09-09",
+      "evidence_type": "benchmark_artifacts",
+      "locator": "closed/NVIDIA/systems and result/configuration directories",
+      "case": "2",
+      "review_caveat": "Repository artifacts were inspected, not executed",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-mlperf-rules",
+      "title": "MLPerf Inference Rules",
+      "url": "https://github.com/mlcommons/inference_policies/blob/master/inference_rules.adoc",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "official_methodology",
+      "locator": "Division, accuracy, scenarios, LoadGen, reproducibility rules",
+      "case": "2",
+      "review_caveat": "Live master can change; use release-matched rules for reproduction",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-sarathi",
+      "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
+      "url": "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+      "checked_on": "2026-10-11",
+      "publication_date": "2024-07",
+      "evidence_type": "peer_reviewed_author_measurement",
+      "locator": "Tables 1–3, Section 5.3, Figure 13, artifact appendix",
+      "case": "3",
+      "review_caveat": "Academic/Microsoft research; historical modified-vLLM baseline; no EFA measurement",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-distserve",
+      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving",
+      "url": "https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf",
+      "checked_on": "2026-10-11",
+      "publication_date": "2024-07",
+      "evidence_type": "peer_reviewed_author_measurement_and_simulation",
+      "locator": "Sections 5, 6.1–6.4; Table 1; Figure 8",
+      "case": "4",
+      "review_caveat": "High-bandwidth placement ablation is simulation; main testbed measured",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-fa3",
+      "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision, v2",
+      "url": "https://arxiv.org/html/2407.08608v2",
+      "checked_on": "2026-10-11",
+      "publication_date": "2024-07-12",
+      "evidence_type": "primary_kernel_microbenchmark",
+      "locator": "Section 4; Appendix C.1",
+      "case": "5",
+      "review_caveat": "Academic and industry/NVIDIA coauthors; kernel speed does not equal end-to-end speed",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-fsdp",
+      "title": "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel, v1",
+      "url": "https://arxiv.org/html/2304.11277v1",
+      "checked_on": "2026-10-11",
+      "publication_date": "2023-04-21",
+      "evidence_type": "primary_implementation_author_measurement",
+      "locator": "Sections 5.1–5.4; Figures 6–8",
+      "case": "6",
+      "review_caveat": "Meta/PyTorch author evaluation; predates current FSDP2",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-megatron",
+      "title": "Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM",
+      "url": "https://arxiv.org/pdf/2104.04473",
+      "checked_on": "2026-10-11",
+      "publication_date": "2021-04-09",
+      "evidence_type": "primary_author_measurement_and_projection",
+      "locator": "Sections 3–5; Table 1; Training Time Estimates",
+      "case": "7",
+      "review_caveat": "NVIDIA/Microsoft/academic authors; weak scaling; full-training duration projected",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-smoothquant",
+      "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
+      "url": "https://proceedings.mlr.press/v202/xiao23c/xiao23c.pdf",
+      "checked_on": "2026-10-11",
+      "publication_date": "2023-07",
+      "evidence_type": "peer_reviewed_author_measurement",
+      "locator": "Sections 5.1–5.4; Figures 8–9; Tables 8–9",
+      "case": "8",
+      "review_caveat": "Academic/industry authors; W8A8 recipe and historical models, not FP4 blanket quality",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-demystifying-nccl",
+      "title": "Demystifying NCCL: An In-depth Analysis of GPU Communication Protocols and Algorithms, v1",
+      "url": "https://arxiv.org/html/2507.04786v1",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-07-07",
+      "evidence_type": "primary_microbenchmark_and_source_analysis",
+      "locator": "Section V-E; Figure 6; source version statement",
+      "case": "9",
+      "review_caveat": "ETH/NVIDIA/Broadcom authors; Alps Slingshot measured; simulator analysis separate",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "study-serverlessllm",
+      "title": "ServerlessLLM: Low-Latency Serverless Inference for Large Language Models",
+      "url": "https://www.usenix.org/system/files/osdi24-fu.pdf",
+      "checked_on": "2026-10-11",
+      "publication_date": "2024-07",
+      "evidence_type": "peer_reviewed_author_measurement",
+      "locator": "Sections 7.1–7.2; Figure 6",
+      "case": "10",
+      "review_caveat": "Cold checkpoint loading metric; not a token-generation or isolated NUMA benchmark",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "audit-aws-g7e",
+      "title": "Accelerate Generative AI Inference on Amazon SageMaker AI with G7e Instances",
+      "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-inference-on-amazon-sagemaker-ai-with-g7e-instances/",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "vendor_benchmark_with_configuration_conflict",
+      "locator": "Performance benchmarks; later instance-size table",
+      "case": "auxiliary",
+      "review_caveat": "Unresolved four-versus-two-GPU description for G6e baseline; historical SageMaker pricing; not EC2 pricing",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "audit-aws-efa-deepep",
+      "title": "Scaling MoE reinforcement learning on Amazon EKS with EFA and DeepEP with 40% more throughput",
+      "url": "https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/",
+      "checked_on": "2026-10-11",
+      "publication_date": "2026-09-25",
+      "evidence_type": "vendor_application_benchmark",
+      "locator": "Figure 5; Launching DeepEP version matrix",
+      "case": "auxiliary",
+      "review_caveat": "EFA/DeepEP enabled deployment; not EFA-versus-TCP or G7e portability isolation",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "path-nccl-troubleshooting",
+      "title": "NCCL GPU troubleshooting",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting/gpu_troubleshooting.html",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "official_documentation",
+      "locator": "GPU-to-GPU communication; P2P transport and topology",
+      "case": "path",
+      "review_caveat": "Physical capability and effective access differ; no local measurement performed",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "path-aws-ofi",
+      "title": "AWS OFI NCCL",
+      "url": "https://github.com/aws/aws-ofi-nccl",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "official_source_repository",
+      "locator": "README",
+      "case": "path",
+      "review_caveat": "Use validated releases and per-application transport logs",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "path-aws-efa-logs",
+      "title": "AWS EKS KubeRay transport checks",
+      "url": "https://aws.github.io/deep-learning-containers/ray-train/deployment/eks/",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "official_documentation",
+      "locator": "EFA/NCCL transport verification",
+      "case": "path",
+      "review_caveat": "Provider selected is not an application-performance result",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "path-vllm-custom",
+      "title": "vLLM legacy custom-all-reduce implementation",
+      "url": "https://github.com/vllm-project/vllm/blob/main/vllm/distributed/device_communicators/custom_all_reduce.py",
+      "checked_on": "2026-10-11",
+      "publication_date": null,
+      "evidence_type": "official_source_repository",
+      "locator": "Eligibility checks and fallbacks",
+      "case": "path",
+      "review_caveat": "Live source; newer communicator backends can differ",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "id": "excluded-blackwell-microbench",
+      "title": "Microbenchmarking NVIDIA’s Blackwell Architecture: An in-depth Architectural Analysis, v1",
+      "url": "https://arxiv.org/html/2512.02189v1",
+      "checked_on": "2026-10-11",
+      "publication_date": "2025-12-01",
+      "evidence_type": "reviewed_but_excluded_preprint",
+      "locator": "Introduction code-availability statement; Tables VIII–IX; Section VII",
+      "case": "exclusion",
+      "review_caveat": "Artifacts unavailable in reviewed version; phase/metric ambiguity unresolved; not used for quantitative recommendations",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    }
+  ]
+}

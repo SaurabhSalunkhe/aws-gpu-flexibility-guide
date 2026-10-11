@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-11",
+  "policy": "Primary-source facts and original published experiments, not account-level availability or this repository measuring application performance. Live links may change after review.",
+  "sources": [
+    {
+      "title": "AWS G7e",
+      "url": "https://aws.amazon.com/ec2/instance-types/g7e/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "README.md",
+        "docs/01-decision-guide.md",
+        "docs/02-instance-catalog.md",
+        "docs/04-parallelism.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "AWS P5",
+      "url": "https://aws.amazon.com/ec2/instance-types/p5/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "README.md",
+        "docs/01-decision-guide.md",
+        "docs/02-instance-catalog.md",
+        "docs/04-parallelism.md",
+        "docs/09-workload-portability.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "AWS P6",
+      "url": "https://aws.amazon.com/ec2/instance-types/p6/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "README.md",
+        "docs/01-decision-guide.md",
+        "docs/02-instance-catalog.md",
+        "docs/04-parallelism.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "NERSC roofline documentation",
+      "url": "https://docs.nersc.gov/tools/performance/roofline/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "NVIDIA's matrix multiplication guide",
+      "url": "https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "NCCL performance troubleshooting",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/archives/nccl_2307/user-guide/docs/troubleshooting/performance_and_tuning.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "NVIDIA NCCL tests",
+      "url": "https://github.com/NVIDIA/nccl-tests/blob/master/doc/PERFORMANCE.md",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md",
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "Megatron-LM decomposition",
+      "url": "https://research.nvidia.com/labs/adlr/MegatronLM/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "Megatron Core's parallelism guide",
+      "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/user-guide/parallelism-guide.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "GPipe",
+      "url": "https://arxiv.org/html/1811.06965v5",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "SIMULATION.md"
+      ]
+    },
+    {
+      "title": "AWS B300 launch",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2025/11/amazon-ec2-p6-b300-instances-nvidia-blackwell-ultra-gpus-available/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "G6",
+      "url": "https://aws.amazon.com/ec2/instance-types/g6/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "G6e",
+      "url": "https://aws.amazon.com/ec2/instance-types/g6e/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "P4",
+      "url": "https://aws.amazon.com/ec2/instance-types/p4/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "B200 launch specifications",
+      "url": "https://aws.amazon.com/blogs/aws/new-amazon-ec2-p6-b200-instances-powered-by-nvidia-blackwell-gpus-to-accelerate-ai-innovations/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "B300 launch specifications",
+      "url": "https://aws.amazon.com/blogs/aws/accelerate-large-scale-ai-applications-with-the-new-amazon-ec2-p6-b300-instances/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "EC2 instance-type specifications",
+      "url": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "docs/09-workload-portability.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "NVIDIA workstation GPU table",
+      "url": "https://docs.nvidia.com/vgpu/sizing/virtual-workstation/latest/gpus-vws.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "NVIDIA L40S",
+      "url": "https://www.nvidia.com/en-us/data-center/l40s/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "EFA support matrix",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "docs/04-parallelism.md",
+        "docs/10-validation-runbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "NVIDIA HGX components",
+      "url": "https://docs.nvidia.com/enterprise-reference-architectures/hgx-ai-factory/latest/components.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "AWS architecture discussion",
+      "url": "https://aws.amazon.com/blogs/machine-learning/aws-ai-infrastructure-with-nvidia-blackwell-two-powerful-compute-solutions-for-the-next-frontier-of-ai/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/02-instance-catalog.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "vLLM quantization",
+      "url": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "Hugging Face Llama configuration",
+      "url": "https://huggingface.co/docs/transformers/v4.45.2/model_doc/llama",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "vLLM attention cache tensor shapes",
+      "url": "https://docs.vllm.ai/en/v0.9.2/api/vllm/attention/backends/flash_attn.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "vLLM model configuration",
+      "url": "https://docs.vllm.ai/en/stable/api/vllm/config/model/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md",
+        "docs/04-parallelism.md"
+      ]
+    },
+    {
+      "title": "vLLM quantized KV cache",
+      "url": "https://docs.vllm.ai/en/stable/features/quantization/quantized_kvcache/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "vLLM conserving memory",
+      "url": "https://docs.vllm.ai/en/stable/configuration/conserving_memory/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "PyTorch memory APIs",
+      "url": "https://github.com/pytorch/pytorch/blob/main/torch/cuda/memory.py",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "vLLM engine arguments",
+      "url": "https://docs.vllm.ai/en/stable/configuration/engine_args/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "Hugging Face training memory anatomy",
+      "url": "https://github.com/huggingface/transformers/blob/main/docs/source/en/model_memory_anatomy.md",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "PyTorch FSDP2",
+      "url": "https://docs.pytorch.org/docs/stable/distributed.fsdp.fully_shard.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "Hugging Face DeepSpeed ZeRO",
+      "url": "https://huggingface.co/docs/transformers/deepspeed",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "PyTorch activation checkpointing",
+      "url": "https://docs.pytorch.org/docs/stable/checkpoint",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "Hugging Face PEFT quantization",
+      "url": "https://huggingface.co/docs/peft/developer_guides/quantization",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/03-model-memory.md"
+      ]
+    },
+    {
+      "title": "PyTorch tensor parallel tutorial",
+      "url": "https://docs.pytorch.org/tutorials/intermediate/TP_tutorial.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/04-parallelism.md"
+      ]
+    },
+    {
+      "title": "vLLM parallelism and scaling",
+      "url": "https://docs.vllm.ai/en/stable/serving/parallelism_scaling/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/04-parallelism.md"
+      ]
+    },
+    {
+      "title": "vLLM data parallel deployment",
+      "url": "https://docs.vllm.ai/en/stable/serving/data_parallel_deployment/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/04-parallelism.md"
+      ]
+    },
+    {
+      "title": "vLLM expert parallel deployment",
+      "url": "https://docs.vllm.ai/en/stable/serving/expert_parallel_deployment/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/04-parallelism.md"
+      ]
+    },
+    {
+      "title": "AWS EFA and NCCL setup",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start-nccl.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/04-parallelism.md",
+        "docs/09-workload-portability.md",
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "NVIDIA compute capabilities",
+      "url": "https://developer.nvidia.com/cuda/gpus",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "docs/09-workload-portability.md"
+      ]
+    },
+    {
+      "title": "vLLM GPU installation and Arm builds",
+      "url": "https://docs.vllm.ai/en/stable/getting_started/installation/gpu/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md"
+      ]
+    },
+    {
+      "title": "AWS GPU instance setup",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/gpu-instances-started.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Blackwell compatibility guide",
+      "url": "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md"
+      ]
+    },
+    {
+      "title": "TensorRT support and engine portability",
+      "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/getting-started/support-matrix.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md"
+      ]
+    },
+    {
+      "title": "TensorRT-LLM hardware support",
+      "url": "https://github.com/NVIDIA/TensorRT-LLM/blob/main/docs/source/supported-hardware.md",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md"
+      ]
+    },
+    {
+      "title": "G7e launch",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-g7e-instances-generally-available/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "current EC2 regions",
+      "url": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-regions.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "Capacity Blocks",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "AWS offerings API",
+      "url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-type-offerings.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "AWS NVIDIA driver requirements",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/public-nvidia-driver.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "DescribeInstanceTypes",
+      "url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instance-types.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "NVIDIA System Management Interface",
+      "url": "https://docs.nvidia.com/deploy/nvidia-smi/index.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/05-migration-playbook.md",
+        "docs/10-validation-runbook.md",
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "8B",
+      "url": "https://huggingface.co/nvidia/Llama-3.1-8B-Instruct-FP8/blob/main/config.json",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/06-worked-examples.md"
+      ]
+    },
+    {
+      "title": "70B",
+      "url": "https://huggingface.co/nvidia/Llama-3.1-70B-Instruct-FP8/blob/main/config.json",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/06-worked-examples.md"
+      ]
+    },
+    {
+      "title": "DeepSpeed's memory guidance",
+      "url": "https://deepspeed.readthedocs.io/en/latest/memory.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/06-worked-examples.md"
+      ]
+    },
+    {
+      "title": "vLLM performance benchmarking",
+      "url": "https://docs.vllm.ai/en/latest/benchmarking/dashboard/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/07-benchmarking.md"
+      ]
+    },
+    {
+      "title": "NVIDIA goodput definition",
+      "url": "https://developer.download.nvidia.com/triton/vLLM-x-Triton-meetup-External.pdf",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/07-benchmarking.md"
+      ]
+    },
+    {
+      "title": "NVIDIA NCCL troubleshooting",
+      "url": "https://github.com/NVIDIA/nccl/blob/master/docs/userguide/source/troubleshooting/performance_and_tuning.rst",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/09-workload-portability.md"
+      ]
+    },
+    {
+      "title": "AWS OFI NCCL",
+      "url": "https://github.com/aws/aws-ofi-nccl",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/09-workload-portability.md",
+        "docs/10-validation-runbook.md",
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "CUDA Best Practices",
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/09-workload-portability.md"
+      ]
+    },
+    {
+      "title": "Nsight Systems",
+      "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/09-workload-portability.md",
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "NVIDIA nvbandwidth",
+      "url": "https://github.com/NVIDIA/nvbandwidth",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "NVIDIA nccl-tests",
+      "url": "https://github.com/NVIDIA/nccl-tests",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "NCCL environment variables",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/10-validation-runbook.md"
+      ]
+    },
+    {
+      "title": "SGLang issue #18870, including February 20 follow-up",
+      "url": "https://github.com/sgl-project/sglang/issues/18870",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "Author's raw-artifact collection",
+      "url": "https://gist.github.com/stewtong/980e7b95d03443d81cdd1057582c4518",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "NVIDIA v5.1 Table 2 and Figure 1 footnotes",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-ultra-sets-new-inference-records-in-mlperf-debut/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "MLCommons results",
+      "url": "https://docs.mlcommons.org/inference_results_v5.1/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "submission artifacts",
+      "url": "https://github.com/mlcommons/inference_results_v5.1",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "benchmark rules",
+      "url": "https://github.com/mlcommons/inference_policies/blob/master/inference_rules.adoc",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "NVIDIA v5.0, \u201cHopper continues to improve\u201d",
+      "url": "https://developer.nvidia.com/blog/nvidia-blackwell-delivers-massive-performance-leaps-in-mlperf-inference-v5-0",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "Sarathi-Serve, \u00a75.3, Figure 13, Tables 1\u20133 and artifact appendix",
+      "url": "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "DistServe, \u00a7\u00a75\u20136 and Table 1",
+      "url": "https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "FlashAttention-3 v2, \u00a74 and Appendix C.1",
+      "url": "https://arxiv.org/html/2407.08608v2",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "PyTorch FSDP, \u00a7\u00a75.1\u20135.4, Figures 6\u20138",
+      "url": "https://arxiv.org/html/2304.11277v1",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "Megatron-LM, \u00a7\u00a73\u20135, Table 1",
+      "url": "https://arxiv.org/pdf/2104.04473",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "SmoothQuant, \u00a7\u00a75.1\u20135.4, Figures 8\u20139 and Tables 8\u20139",
+      "url": "https://proceedings.mlr.press/v202/xiao23c/xiao23c.pdf",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "Demystifying NCCL v1, \u00a7V-E and Figure 6",
+      "url": "https://arxiv.org/html/2507.04786v1",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "ServerlessLLM, \u00a7\u00a77.1\u20137.2 and Figure 6",
+      "url": "https://www.usenix.org/system/files/osdi24-fu.pdf",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "AWS benchmark and configuration tables",
+      "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-inference-on-amazon-sagemaker-ai-with-g7e-instances/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "AWS, 25 September 2026, Figure 5 and version matrix",
+      "url": "https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "NCCL GPU troubleshooting",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting/gpu_troubleshooting.html",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "AWS EKS/Ray training transport checks",
+      "url": "https://aws.github.io/deep-learning-containers/ray-train/deployment/eks/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "vLLM's legacy custom-all-reduce implementation",
+      "url": "https://github.com/vllm-project/vllm/blob/main/vllm/distributed/device_communicators/custom_all_reduce.py",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "Microbenchmarking NVIDIA's Blackwell Architecture v1",
+      "url": "https://arxiv.org/html/2512.02189v1",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "docs/11-published-evidence.md"
+      ]
+    },
+    {
+      "title": "nvidia l4",
+      "url": "https://www.nvidia.com/en-us/data-center/l4/",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        "data/instance-catalog.json"
+      ]
+    },
+    {
+      "title": "GitHub checkout action",
+      "url": "https://github.com/actions/checkout",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        ".github/workflows/validate.yml"
+      ]
+    },
+    {
+      "title": "GitHub setup-python action",
+      "url": "https://github.com/actions/setup-python",
+      "checked_on": "2026-10-11",
+      "used_in": [
+        ".github/workflows/validate.yml"
+      ]
+    }
+  ]
+}
