@@ -159,7 +159,8 @@
       "used_in": [
         "docs/02-instance-catalog.md",
         "docs/09-workload-portability.md",
-        "data/instance-catalog.json"
+        "data/instance-catalog.json",
+        "data/assessment-sources.json"
       ]
     },
     {
@@ -353,7 +354,8 @@
       "used_in": [
         "docs/04-parallelism.md",
         "docs/09-workload-portability.md",
-        "docs/10-validation-runbook.md"
+        "docs/10-validation-runbook.md",
+        "data/assessment-sources.json"
       ]
     },
     {
@@ -362,7 +364,8 @@
       "checked_on": "2026-10-11",
       "used_in": [
         "docs/05-migration-playbook.md",
-        "docs/09-workload-portability.md"
+        "docs/09-workload-portability.md",
+        "data/assessment-sources.json"
       ]
     },
     {
@@ -386,7 +389,8 @@
       "url": "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/05-migration-playbook.md"
+        "docs/05-migration-playbook.md",
+        "data/assessment-sources.json"
       ]
     },
     {
@@ -524,7 +528,8 @@
       "used_in": [
         "docs/09-workload-portability.md",
         "docs/10-validation-runbook.md",
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -565,7 +570,8 @@
       "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/10-validation-runbook.md"
+        "docs/10-validation-runbook.md",
+        "data/assessment-sources.json"
       ]
     },
     {
@@ -573,7 +579,8 @@
       "url": "https://github.com/sgl-project/sglang/issues/18870",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -581,7 +588,8 @@
       "url": "https://gist.github.com/stewtong/980e7b95d03443d81cdd1057582c4518",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -589,7 +597,8 @@
       "url": "https://developer.nvidia.com/blog/nvidia-blackwell-ultra-sets-new-inference-records-in-mlperf-debut/",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -597,7 +606,8 @@
       "url": "https://docs.mlcommons.org/inference_results_v5.1/",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -605,7 +615,8 @@
       "url": "https://github.com/mlcommons/inference_results_v5.1",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -613,7 +624,8 @@
       "url": "https://github.com/mlcommons/inference_policies/blob/master/inference_rules.adoc",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -621,7 +633,8 @@
       "url": "https://developer.nvidia.com/blog/nvidia-blackwell-delivers-massive-performance-leaps-in-mlperf-inference-v5-0",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -629,7 +642,8 @@
       "url": "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -637,7 +651,8 @@
       "url": "https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -645,7 +660,8 @@
       "url": "https://arxiv.org/html/2407.08608v2",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -653,7 +669,8 @@
       "url": "https://arxiv.org/html/2304.11277v1",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -661,7 +678,8 @@
       "url": "https://arxiv.org/pdf/2104.04473",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -669,7 +687,8 @@
       "url": "https://proceedings.mlr.press/v202/xiao23c/xiao23c.pdf",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -677,7 +696,8 @@
       "url": "https://arxiv.org/html/2507.04786v1",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -685,7 +705,8 @@
       "url": "https://www.usenix.org/system/files/osdi24-fu.pdf",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -693,7 +714,8 @@
       "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-generative-ai-inference-on-amazon-sagemaker-ai-with-g7e-instances/",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -701,7 +723,8 @@
       "url": "https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -709,7 +732,8 @@
       "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting/gpu_troubleshooting.html",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -717,7 +741,8 @@
       "url": "https://aws.github.io/deep-learning-containers/ray-train/deployment/eks/",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -725,7 +750,8 @@
       "url": "https://github.com/vllm-project/vllm/blob/main/vllm/distributed/device_communicators/custom_all_reduce.py",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {
@@ -733,7 +759,8 @@
       "url": "https://arxiv.org/html/2512.02189v1",
       "checked_on": "2026-10-11",
       "used_in": [
-        "docs/11-published-evidence.md"
+        "docs/11-published-evidence.md",
+        "data/published-study-sources.json"
       ]
     },
     {

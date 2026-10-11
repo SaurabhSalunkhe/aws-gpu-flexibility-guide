@@ -1,0 +1,743 @@
+{
+  "schema_version": 1,
+  "tool": "gpu_assess",
+  "assessment": "static_triage_only",
+  "portability_verdict": "not_determined",
+  "workload": "serving",
+  "repository": "local repository (absolute path withheld)",
+  "catalog_checked_on": "2026-10-11",
+  "source_hardware": {
+    "instance_type": "g7e.48xlarge",
+    "gpu_model": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_count": 8,
+    "vcpu": 192,
+    "host_memory_gib": 2048,
+    "architecture": "x86_64",
+    "cpu": "Intel Xeon Emerald Rapids",
+    "gpu_memory_type": "GDDR7",
+    "nominal_gpu_memory_per_device_gb": 96,
+    "nominal_gpu_memory_aggregate_gb": 768,
+    "ec2_spec_reported_per_device_gib": 96,
+    "network_max_gbps": 1600,
+    "efa_supported": true,
+    "gpudirect_rdma_supported": true,
+    "topology": "GPUDirect P2P over PCIe; no NVLink",
+    "source_ids": [
+      "g7e",
+      "ec2_specs",
+      "efa"
+    ],
+    "nvlink": false,
+    "notes": [
+      "Multi-GPU sizes support EFAv4 GPUDirect RDMA.",
+      "AWS nominal GB and EC2 GiB labels differ without numeric conversion."
+    ],
+    "efa_generation": 4,
+    "compute_capability": "12.0",
+    "sources": [
+      "https://aws.amazon.com/ec2/instance-types/g7e/",
+      "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html",
+      "https://developer.nvidia.com/cuda/gpus"
+    ]
+  },
+  "target_hardware": {
+    "instance_type": "p5.48xlarge",
+    "gpu_model": "NVIDIA H100",
+    "gpu_count": 8,
+    "vcpu": 192,
+    "host_memory_gib": 2048,
+    "architecture": "x86_64",
+    "cpu": "AMD EPYC 7R13",
+    "gpu_memory_type": "HBM3",
+    "nominal_gpu_memory_per_device_gb": 80,
+    "nominal_gpu_memory_aggregate_gb": 640,
+    "ec2_spec_reported_per_device_gib": 80,
+    "network_max_gbps": 3200,
+    "efa_supported": true,
+    "gpudirect_rdma_supported": true,
+    "topology": "NVLink/NVSwitch",
+    "source_ids": [
+      "p5",
+      "ec2_specs"
+    ],
+    "nvlink": true,
+    "efa_generation": 2,
+    "gpu_peer_bandwidth_gbytes_per_second": 900,
+    "compute_capability": "9.0",
+    "sources": [
+      "https://aws.amazon.com/ec2/instance-types/p5/",
+      "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+      "https://developer.nvidia.com/cuda/gpus"
+    ]
+  },
+  "hardware_differences": [
+    {
+      "field": "gpu_model",
+      "source": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "target": "NVIDIA H100",
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "cpu",
+      "source": "Intel Xeon Emerald Rapids",
+      "target": "AMD EPYC 7R13",
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "gpu_memory_type",
+      "source": "GDDR7",
+      "target": "HBM3",
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "ec2_spec_reported_per_device_gib",
+      "source": 96,
+      "target": 80,
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "topology",
+      "source": "GPUDirect P2P over PCIe; no NVLink",
+      "target": "NVLink/NVSwitch",
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "nvlink",
+      "source": false,
+      "target": true,
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "network_max_gbps",
+      "source": 1600,
+      "target": 3200,
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "efa_generation",
+      "source": 4,
+      "target": 2,
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    },
+    {
+      "field": "compute_capability",
+      "source": "12.0",
+      "target": "9.0",
+      "category": "catalog_fact",
+      "meaning": "Catalog platform difference; application impact is unverified. Network rates are advertised maxima, not achieved bandwidth; missing values are unknown."
+    }
+  ],
+  "limits": {
+    "max_files": 2000,
+    "max_file_bytes": 524288,
+    "max_total_bytes": 33554432,
+    "max_entries": 20000,
+    "max_depth": 16,
+    "max_findings": 1000,
+    "max_line_chars": 8192,
+    "max_ignore_rules": 2048
+  },
+  "coverage": {
+    "bytes_read": 1365,
+    "entries_seen": 7,
+    "files_scanned": 6,
+    "ignore_files_read": 1
+  },
+  "coverage_warnings": [],
+  "findings": [
+    {
+      "rule_id": "architecture",
+      "category": "heuristic",
+      "title": "Explicit GPU architecture target",
+      "evidence": {
+        "path": "CMakeLists.txt",
+        "line": 2,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "CMAKE_CUDA_ARCHITECTURES",
+          "declared target: 100",
+          "declared target: 90"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Compare declared targets with the selected GPU compute capability. Inspect built artifacts for compatible cubin/PTX; a text flag does not establish what ships. Architecture-specific a/f targets need separate compatibility review.",
+      "validation": "Inspect actual artifacts and build logs; run representative custom kernels on each target. If appropriate, test the documented PTX JIT path separately and unset diagnostic overrides afterward.",
+      "runbook_sections": "1, 5",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ],
+      "target_context": "Selected target GPU compute capability is 9.0. Compare actual compiled artifacts and dispatch support; different text targets alone do not establish incompatibility."
+    },
+    {
+      "rule_id": "architecture",
+      "category": "heuristic",
+      "title": "Explicit GPU architecture target",
+      "evidence": {
+        "path": "CMakeLists.txt",
+        "line": 3,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "compute_90a",
+          "sm_90a"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Compare declared targets with the selected GPU compute capability. Inspect built artifacts for compatible cubin/PTX; a text flag does not establish what ships. Architecture-specific a/f targets need separate compatibility review.",
+      "validation": "Inspect actual artifacts and build logs; run representative custom kernels on each target. If appropriate, test the documented PTX JIT path separately and unset diagnostic overrides afterward.",
+      "runbook_sections": "1, 5",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ],
+      "target_context": "Selected target GPU compute capability is 9.0. Compare actual compiled artifacts and dispatch support; different text targets alone do not establish incompatibility."
+    },
+    {
+      "rule_id": "container",
+      "category": "heuristic",
+      "title": "Container build/runtime declaration",
+      "evidence": {
+        "path": "Dockerfile",
+        "line": 2,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "FROM (image reference withheld)",
+          "CUDA image version: 12.4.1",
+          "linux/amd64"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Review base-image digest, host CPU architecture, CUDA user-space libraries and driver requirements. Make separate target profiles where necessary.",
+      "validation": "Build and start the exact image on each target; record image digest, host architecture, driver and resolved runtime versions.",
+      "runbook_sections": "1, 5",
+      "sources": []
+    },
+    {
+      "rule_id": "architecture",
+      "category": "heuristic",
+      "title": "Explicit GPU architecture target",
+      "evidence": {
+        "path": "Dockerfile",
+        "line": 3,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "TORCH_CUDA_ARCH_LIST",
+          "declared target: 9.0"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Compare declared targets with the selected GPU compute capability. Inspect built artifacts for compatible cubin/PTX; a text flag does not establish what ships. Architecture-specific a/f targets need separate compatibility review.",
+      "validation": "Inspect actual artifacts and build logs; run representative custom kernels on each target. If appropriate, test the documented PTX JIT path separately and unset diagnostic overrides afterward.",
+      "runbook_sections": "1, 5",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ],
+      "target_context": "Selected target GPU compute capability is 9.0. Compare actual compiled artifacts and dispatch support; different text targets alone do not establish incompatibility."
+    },
+    {
+      "rule_id": "transport",
+      "category": "heuristic",
+      "title": "NCCL or Libfabric/EFA override reference",
+      "evidence": {
+        "path": "Dockerfile",
+        "line": 4,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "NCCL_P2P_DISABLE"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Determine whether this setting is effective and why it exists. Review target-specific transport defaults and remove obsolete workarounds only in a controlled comparison.",
+      "validation": "Capture initialization logs on every rank, provider/plugin selection and representative collective traces. Confirm application paths, including custom communication that bypasses NCCL.",
+      "runbook_sections": "2, 3, 4, 5",
+      "sources": [
+        "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start-nccl.html"
+      ]
+    },
+    {
+      "rule_id": "transport",
+      "category": "heuristic",
+      "title": "NCCL or Libfabric/EFA override reference",
+      "evidence": {
+        "path": "Dockerfile",
+        "line": 5,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "NCCL_SOCKET_IFNAME"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Determine whether this setting is effective and why it exists. Review target-specific transport defaults and remove obsolete workarounds only in a controlled comparison.",
+      "validation": "Capture initialization logs on every rank, provider/plugin selection and representative collective traces. Confirm application paths, including custom communication that bypasses NCCL.",
+      "runbook_sections": "2, 3, 4, 5",
+      "sources": [
+        "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
+        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start-nccl.html"
+      ]
+    },
+    {
+      "rule_id": "entrypoint",
+      "category": "heuristic",
+      "title": "Potential workload entry point",
+      "evidence": {
+        "path": "Dockerfile",
+        "line": 6,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "launch declaration (command withheld)"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Identify the actual serving/training launch and its deployed overrides. Trace configuration precedence manually; scanning does not resolve imports or launch scripts.",
+      "validation": "Freeze the exact command and configuration for baseline and target, then use that same path in the end-to-end matrix.",
+      "runbook_sections": "5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "custom_kernel",
+      "category": "heuristic",
+      "title": "Custom or specialized GPU kernel signal",
+      "evidence": {
+        "path": "kernel.cu",
+        "line": 1,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "CUDA source file"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Locate kernel owners and inspect wheel/fatbin targets, dispatch guards and build toolchain. Rebuild or select supported fallbacks only after checking semantics.",
+      "validation": "Exercise every relevant kernel branch and shape on target hardware, compare outputs to a trusted reference, and capture compile/cold-start failures.",
+      "runbook_sections": "1, 5, 6",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ]
+    },
+    {
+      "rule_id": "custom_kernel",
+      "category": "heuristic",
+      "title": "Custom or specialized GPU kernel signal",
+      "evidence": {
+        "path": "kernel.cu",
+        "line": 2,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "specialized kernel or extension marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Locate kernel owners and inspect wheel/fatbin targets, dispatch guards and build toolchain. Rebuild or select supported fallbacks only after checking semantics.",
+      "validation": "Exercise every relevant kernel branch and shape on target hardware, compare outputs to a trusted reference, and capture compile/cold-start failures.",
+      "runbook_sections": "1, 5, 6",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ]
+    },
+    {
+      "rule_id": "dependency",
+      "category": "heuristic",
+      "title": "Framework or CUDA dependency declaration",
+      "evidence": {
+        "path": "requirements.txt",
+        "line": 2,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "torch",
+          "version token (constraint not resolved): 2.5.1"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Record the resolved package, wheel, CUDA runtime and driver versions. Choose a target-supported combination from the engine/vendor support matrix; do not upgrade from this scan alone.",
+      "validation": "Rebuild in a clean approved image, import the pinned runtime on target hardware, and execute representative kernels including custom extensions.",
+      "runbook_sections": "1, 5",
+      "sources": []
+    },
+    {
+      "rule_id": "dependency",
+      "category": "heuristic",
+      "title": "Framework or CUDA dependency declaration",
+      "evidence": {
+        "path": "requirements.txt",
+        "line": 3,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "vllm",
+          "version token (constraint not resolved): 0.6.4"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Record the resolved package, wheel, CUDA runtime and driver versions. Choose a target-supported combination from the engine/vendor support matrix; do not upgrade from this scan alone.",
+      "validation": "Rebuild in a clean approved image, import the pinned runtime on target hardware, and execute representative kernels including custom extensions.",
+      "runbook_sections": "1, 5",
+      "sources": []
+    },
+    {
+      "rule_id": "custom_kernel",
+      "category": "heuristic",
+      "title": "Custom or specialized GPU kernel signal",
+      "evidence": {
+        "path": "requirements.txt",
+        "line": 4,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "specialized kernel or extension marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Locate kernel owners and inspect wheel/fatbin targets, dispatch guards and build toolchain. Rebuild or select supported fallbacks only after checking semantics.",
+      "validation": "Exercise every relevant kernel branch and shape on target hardware, compare outputs to a trusted reference, and capture compile/cold-start failures.",
+      "runbook_sections": "1, 5, 6",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ]
+    },
+    {
+      "rule_id": "dependency",
+      "category": "heuristic",
+      "title": "Framework or CUDA dependency declaration",
+      "evidence": {
+        "path": "requirements.txt",
+        "line": 4,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "flash-attn",
+          "version token (constraint not resolved): 2.7.0"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Record the resolved package, wheel, CUDA runtime and driver versions. Choose a target-supported combination from the engine/vendor support matrix; do not upgrade from this scan alone.",
+      "validation": "Rebuild in a clean approved image, import the pinned runtime on target hardware, and execute representative kernels including custom extensions.",
+      "runbook_sections": "1, 5",
+      "sources": []
+    },
+    {
+      "rule_id": "training_sharding",
+      "category": "heuristic",
+      "title": "Distributed training or state-sharding signal",
+      "evidence": {
+        "path": "training.yaml",
+        "line": 2,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "distributed training/sharding marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Preserve optimizer/checkpoint semantics while reviewing FSDP/ZeRO/DDP groups, communication frequency and CPU offload for the new topology.",
+      "validation": "Compare gradients/loss, effective batch, max-rank memory, step time, checkpoint restore and recovery under the target layout.",
+      "runbook_sections": "3, 4, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "host_copy",
+      "category": "heuristic",
+      "title": "Potential host/device transfer or CPU offload",
+      "evidence": {
+        "path": "training.yaml",
+        "line": 4,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "host/device copy or offload marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Check whether the transfer is on the critical path, intended checkpoint/output work, or offload. Review batching, placement and overlap before changing it.",
+      "validation": "Profile representative execution for H2D/D2H copies, synchronization and CPU gaps; compare quality and unprofiled end-to-end results after any change.",
+      "runbook_sections": "2, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "host_pipeline",
+      "category": "heuristic",
+      "title": "Host preprocessing or data-loader signal",
+      "evidence": {
+        "path": "training.yaml",
+        "line": 6,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "host pipeline marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Review CPU threads, affinity, NUMA placement, pinned buffers and preprocessing throughput against the target host; do not assume more GPU capacity removes a host bottleneck.",
+      "validation": "Measure host-stage latency and GPU idle gaps under representative input, concurrency and storage conditions.",
+      "runbook_sections": "1, 2, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "host_pipeline",
+      "category": "heuristic",
+      "title": "Host preprocessing or data-loader signal",
+      "evidence": {
+        "path": "training.yaml",
+        "line": 7,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "host pipeline marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Review CPU threads, affinity, NUMA placement, pinned buffers and preprocessing throughput against the target host; do not assume more GPU capacity removes a host bottleneck.",
+      "validation": "Measure host-stage latency and GPU idle gaps under representative input, concurrency and storage conditions.",
+      "runbook_sections": "1, 2, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "custom_kernel",
+      "category": "heuristic",
+      "title": "Custom or specialized GPU kernel signal",
+      "evidence": {
+        "path": "workload.py",
+        "line": 3,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "specialized kernel or extension marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Locate kernel owners and inspect wheel/fatbin targets, dispatch guards and build toolchain. Rebuild or select supported fallbacks only after checking semantics.",
+      "validation": "Exercise every relevant kernel branch and shape on target hardware, compare outputs to a trusted reference, and capture compile/cold-start failures.",
+      "runbook_sections": "1, 5, 6",
+      "sources": [
+        "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html"
+      ]
+    },
+    {
+      "rule_id": "parallelism",
+      "category": "heuristic",
+      "title": "Fixed parallelism or GPU-count configuration",
+      "evidence": {
+        "path": "workload.py",
+        "line": 6,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "tensor_parallel_size: 8"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Reconcile local GPU count, global world size, TP/PP/DP and engine partition rules. A global group may span nodes; do not compare it with a node count as an automatic error.",
+      "validation": "Test the proposed rank layout, shard divisibility, per-rank peak memory and actual collectives with the exact workload.",
+      "runbook_sections": "1, 3, 4, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "parallelism",
+      "category": "heuristic",
+      "title": "Fixed parallelism or GPU-count configuration",
+      "evidence": {
+        "path": "workload.py",
+        "line": 7,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "pipeline_parallel_size: 2"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Reconcile local GPU count, global world size, TP/PP/DP and engine partition rules. A global group may span nodes; do not compare it with a node count as an automatic error.",
+      "validation": "Test the proposed rank layout, shard divisibility, per-rank peak memory and actual collectives with the exact workload.",
+      "runbook_sections": "1, 3, 4, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "parallelism",
+      "category": "heuristic",
+      "title": "Fixed parallelism or GPU-count configuration",
+      "evidence": {
+        "path": "workload.py",
+        "line": 8,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "world_size: 16"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Reconcile local GPU count, global world size, TP/PP/DP and engine partition rules. A global group may span nodes; do not compare it with a node count as an automatic error.",
+      "validation": "Test the proposed rank layout, shard divisibility, per-rank peak memory and actual collectives with the exact workload.",
+      "runbook_sections": "1, 3, 4, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "precision",
+      "category": "heuristic",
+      "title": "Precision or quantization selection",
+      "evidence": {
+        "path": "workload.py",
+        "line": 9,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "bf16"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Verify engine/kernel support for the exact precision and model format on each GPU. Keep quality tolerances fixed; this scanner makes no datatype support verdict.",
+      "validation": "Compare task quality and numerical behavior with the agreed reference, then measure memory, latency and goodput for each proposed precision.",
+      "runbook_sections": "5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "precision",
+      "category": "heuristic",
+      "title": "Precision or quantization selection",
+      "evidence": {
+        "path": "workload.py",
+        "line": 10,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "fp8"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Verify engine/kernel support for the exact precision and model format on each GPU. Keep quality tolerances fixed; this scanner makes no datatype support verdict.",
+      "validation": "Compare task quality and numerical behavior with the agreed reference, then measure memory, latency and goodput for each proposed precision.",
+      "runbook_sections": "5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "device",
+      "category": "heuristic",
+      "title": "Fixed GPU selection or device index",
+      "evidence": {
+        "path": "workload.py",
+        "line": 14,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "fixed CUDA ordinal: 7"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Replace accidental ordinal assumptions with verified local-rank mapping or an explicit deployment profile. Keep deliberate single-device choices only where intended.",
+      "validation": "Launch with the intended visible-device set and rank count; verify every rank's GPU identity and per-device peak memory.",
+      "runbook_sections": "1, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "host_copy",
+      "category": "heuristic",
+      "title": "Potential host/device transfer or CPU offload",
+      "evidence": {
+        "path": "workload.py",
+        "line": 15,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "host/device copy or offload marker"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Check whether the transfer is on the critical path, intended checkpoint/output work, or offload. Review batching, placement and overlap before changing it.",
+      "validation": "Profile representative execution for H2D/D2H copies, synchronization and CPU gaps; compare quality and unprofiled end-to-end results after any change.",
+      "runbook_sections": "2, 5, 6",
+      "sources": []
+    },
+    {
+      "rule_id": "entrypoint",
+      "category": "heuristic",
+      "title": "Potential workload entry point",
+      "evidence": {
+        "path": "workload.py",
+        "line": 19,
+        "context": "unverified_source_or_configuration",
+        "tokens": [
+          "launch declaration (command withheld)"
+        ]
+      },
+      "interpretation": "Text signal only; reachability, precedence and effective runtime configuration are unverified.",
+      "suggested_change": "Identify the actual serving/training launch and its deployed overrides. Trace configuration precedence manually; scanning does not resolve imports or launch scripts.",
+      "validation": "Freeze the exact command and configuration for baseline and target, then use that same path in the end-to-end matrix.",
+      "runbook_sections": "5, 6",
+      "sources": []
+    }
+  ],
+  "finding_counts": {
+    "architecture": 3,
+    "container": 1,
+    "custom_kernel": 4,
+    "dependency": 3,
+    "device": 1,
+    "entrypoint": 2,
+    "host_copy": 2,
+    "host_pipeline": 2,
+    "parallelism": 3,
+    "precision": 2,
+    "training_sharding": 1,
+    "transport": 2
+  },
+  "known_compatibility_issues": [],
+  "known_issue_policy": "None asserted from text alone. A flag or declared version is not a resolved artifact or an executed path; an empty list is not evidence of compatibility.",
+  "runtime_unknowns": [
+    {
+      "category": "runtime_unknown",
+      "id": "effective_software",
+      "detail": "Installed driver/runtime, resolved dependencies, image digest, external or generated configuration, branch reachability and built cubin/PTX are unknown."
+    },
+    {
+      "category": "runtime_unknown",
+      "id": "effective_transport",
+      "detail": "Cannot deduce effective NCCL/P2P/EFA transport, fallback, overlap or custom communication from static text."
+    },
+    {
+      "category": "runtime_unknown",
+      "id": "fit_quality_performance",
+      "detail": "Cannot determine per-rank memory fit, numerical quality, throughput, latency, cost or certify portability without target-hardware tests."
+    }
+  ],
+  "validation_matrix": [
+    {
+      "id": "software_and_kernels",
+      "runbook_sections": "1, 5",
+      "required_evidence": "Exact image, driver/runtime, host ISA, GPU compute capability and custom-kernel correctness on each source/target profile.",
+      "status": "not_run"
+    },
+    {
+      "id": "memory_and_layout",
+      "runbook_sections": "1, 6",
+      "required_evidence": "Peak allocated/reserved memory on every rank at the largest supported shapes, context, concurrency or training batch; valid TP/PP/DP partitioning.",
+      "status": "not_run"
+    },
+    {
+      "id": "host_and_peer_paths",
+      "runbook_sections": "2, 5",
+      "required_evidence": "H2D/D2H and peer copies for relevant size/pair/NUMA placements, then application traces showing effective transfer paths.",
+      "status": "not_run"
+    },
+    {
+      "id": "collectives_and_network",
+      "runbook_sections": "3, 4, 5",
+      "required_evidence": "Actual rank layout and message sizes; NCCL/provider logs on every rank; intended plugin/EFA selection and custom non-NCCL paths.",
+      "status": "not_run"
+    },
+    {
+      "id": "end_to_end_quality_slo",
+      "runbook_sections": "6, 7",
+      "required_evidence": "Predeclared quality/SLO acceptance, representative load/tails, warm/cold starts, independent repetitions, goodput and cost per qualifying result.",
+      "status": "not_run"
+    },
+    {
+      "id": "recovery_and_rollback",
+      "runbook_sections": "6, 7",
+      "required_evidence": "Drain/failure/restart, checkpoint restore where relevant, replacement capacity, and a verified rollback profile.",
+      "status": "not_run"
+    }
+  ],
+  "safety": {
+    "customer_code_executed": false,
+    "network_used": false,
+    "customer_files_modified": false,
+    "source_lines_in_report": false,
+    "notes": "Allowlisted technical tokens and sanitized relative paths only. Paths and dependency versions can still be confidential; review locally before sharing."
+  },
+  "method_limitations": [
+    "Lexical patterns, not AST/data-flow analysis; inline comments, quoted strings, examples and dead code can match.",
+    "Full-line comments are skipped. Test/example paths are labelled, not excluded. Aliases, computed values, split-line assignments and unsupported formats may be missed.",
+    "No requirements includes, imports, submodule metadata, symlinks, hardlinks, container images or external paths are resolved. Materialized nested files may be scanned. No binary introspection or vulnerability diagnosis.",
+    "Bounded UTF-8 allowlist scan with a documented .gitignore subset; unsupported/unreadable ignore policy skips its whole subtree.",
+    "File extensions and filenames can hide relevant code; no findings never means no migration work."
+  ]
+}

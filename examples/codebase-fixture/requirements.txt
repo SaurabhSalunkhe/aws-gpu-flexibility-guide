@@ -1,0 +1,4 @@
+# Synthetic declarations only. Do not install this fixture.
+torch==2.5.1
+vllm==0.6.4
+flash-attn==2.7.0

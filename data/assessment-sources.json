@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-11",
+  "sources": [
+    {
+      "id": "cuda_compute_capability",
+      "url": "https://developer.nvidia.com/cuda/gpus",
+      "scope": "NVIDIA GPU compute-capability map; distinguishes RTX PRO Blackwell, B200 and B300."
+    },
+    {
+      "id": "cuda_blackwell_compatibility",
+      "url": "https://docs.nvidia.com/cuda/blackwell-compatibility-guide/index.html",
+      "scope": "Covers cubin/PTX and architecture-specific compatibility; does not establish the contents of a scanned build artifact."
+    },
+    {
+      "id": "nccl_env",
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
+      "scope": "NCCL override semantics; references are not evidence that a setting is effective."
+    },
+    {
+      "id": "efa_nccl",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start-nccl.html",
+      "scope": "Target runtime EFA/NCCL procedure; no AWS account or live network tested."
+    },
+    {
+      "id": "ec2_accelerated",
+      "url": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html",
+      "scope": "Exact instance hardware specifications, with conflicts retained in the guide catalog."
+    }
+  ]
+}

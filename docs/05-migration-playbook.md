@@ -8,6 +8,8 @@ A fallback is useful only when it can take the same workload safely. Work throug
 
 Freeze model/tokenizer revisions, prompt formatting, output limits, API behavior, quality bar, and request mix. Record current context, concurrency, and latency objectives. A smaller context limit or different quantization is a service change that needs explicit acceptance.
 
+Before changing code, use the [bounded static assessor](../CODEBASE_ASSESSMENT.md) on an authorized checkout to locate declared dependencies, architecture targets, device/rank assumptions and transport overrides. Review its coverage and limitations; it does not certify that those settings execute.
+
 ## Gate 2: qualify the software stack
 
 The name “Blackwell” does not establish kernel compatibility. NVIDIA currently lists RTX PRO 6000 Blackwell Server Edition at compute capability **12.0**, B200 at **10.0**, B300 at **10.3**, and H100/H200 at **9.0**. These are GPU instruction targets, not a simple performance ranking. [NVIDIA compute capabilities](https://developer.nvidia.com/cuda/gpus)

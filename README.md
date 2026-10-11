@@ -10,6 +10,7 @@ A practical guide for teams moving between AWS G7e, H100, H200, B200, and B300 c
 
 | Your question | Read |
 |---|---|
+| “What in an existing codebase needs migration review?” | [Local read-only codebase assessor](CODEBASE_ASSESSMENT.md) |
 | “What do published measurements actually establish?” | [Ten scoped studies and source audits](docs/11-published-evidence.md) |
 | “Can we explore tradeoffs without renting GPUs?” | [CPU-only analytical sensitivity lab](SIMULATION.md) |
 | “Where could a migration introduce a hidden bottleneck?” | [Whole-workload portability](docs/09-workload-portability.md) |
@@ -84,8 +85,21 @@ python3 simulation.py --only decode_tp8_network --json
 
 Its outputs decompose local compute/memory work and communication under explicit assumptions. They are **uncalibrated simulations, not GPU emulation, measurements, or a ranking of AWS instances**. The [published-evidence review](docs/11-published-evidence.md) keeps measured studies separate and explains why a reported gain may not transfer. No controlled direct G7e-to-AWS H100/H200/B200/B300 portability comparison was established in that selected review.
 
+## Assess an existing codebase locally
+
+The [read-only assessor](CODEBASE_ASSESSMENT.md) turns selected source/configuration signals into review suggestions and a required target-hardware test plan. Try the synthetic example from this trusted guide checkout:
+
+```bash
+python3 -B -m gpu_assess examples/codebase-fixture \
+  --source-instance g7e.48xlarge --target-instance p5.48xlarge \
+  --workload serving
+```
+
+It requires Python 3.10+ on Linux/macOS with POSIX no-follow support. It does not import or execute customer code, install dependencies, contact a service, edit the checkout, or certify portability. Findings are lexical hints with bounded coverage; absence of a match is not an all-clear. The committed fixture and reports are synthetic. Read the [privacy, traversal, and interpreter-environment limits](CODEBASE_ASSESSMENT.md) before scanning an authorized customer checkout.
+
 ## What is included
 
+- A [local static codebase assessor](CODEBASE_ASSESSMENT.md) with synthetic examples, read-only/privacy safeguards, and target-specific review prompts
 - [Decision and portability chapters](docs/01-decision-guide.md), with primary-source links beside claims
 - [Ten scoped published studies](docs/11-published-evidence.md), including a corrected G7e practitioner result and explicit evidence gaps
 - A [96-scenario CPU analytical lab](SIMULATION.md) with reproducible inputs/results and tests

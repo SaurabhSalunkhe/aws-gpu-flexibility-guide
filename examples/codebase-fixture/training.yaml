@@ -1,0 +1,7 @@
+# Synthetic training settings; not a functional config.
+zero_optimization:
+  stage: 3
+  offload_optimizer:
+    device: cpu
+num_workers: 8
+pin_memory: true

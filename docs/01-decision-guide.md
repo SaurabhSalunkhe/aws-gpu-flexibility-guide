@@ -29,6 +29,8 @@ The [catalog](02-instance-catalog.md) also includes A100 P4d/P4de as additional 
 
 Write down the exact model/checkpoint and tokenizer revision, weight and KV precision, maximum prompt plus output tokens, resident concurrency, request mix, quality bar, and latency target. Distinguish inference, adapter fine-tuning, and full training. A name such as “70B at 4-bit” is not a complete contract.
 
+If an existing repository is available, the [local codebase assessor](../CODEBASE_ASSESSMENT.md) can locate static signals and prepare review questions. Its output does not resolve the actual deployment or replace runtime tests.
+
 ### 2. Is the exact software stack supported?
 
 Check GPU compute capability, host architecture, driver/CUDA/runtime, attention and GEMM kernels, quantization format, and parallelism support. Rebuild architecture-specific artifacts where needed. “Blackwell” alone does not establish portability from G7e to B200/B300. See the [software migration checks](05-migration-playbook.md).

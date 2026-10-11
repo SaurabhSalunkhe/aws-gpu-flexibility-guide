@@ -6,6 +6,8 @@
 
 Copy the [benchmark plan](../templates/benchmark-plan.md). Record immutable image/model/tool versions and a budget before a test. Keep logs in an approved private location; review them before sharing.
 
+For an existing repository, first use the [read-only static assessor](../CODEBASE_ASSESSMENT.md) to prepare review questions. Every hardware/runtime check remains unrun until it is executed on the authorized target setup.
+
 ## 1. Capture inventory and physical topology
 
 On each selected test machine, these commands inspect the host and devices:

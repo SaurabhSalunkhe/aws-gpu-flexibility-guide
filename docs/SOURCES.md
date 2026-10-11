@@ -7,7 +7,7 @@
 - AWS product pages establish the advertised instance platform; live EC2/EFA documentation supplies size-specific details. Launch posts establish launch timing, not today’s inventory.
 - Model-publisher configurations establish example architecture shapes. Rounded parameter counts and invented overhead/capacity inputs remain illustrative arithmetic.
 - Engine/framework documentation establishes behavior for its referenced version; live `stable`, `latest`, and `main` links can change. Pin releases and immutable revisions in production.
-- Hardware specifications do not establish model fit, workload speed, available capacity, price, or a deployment recommendation. No customer AWS API calls or GPU benchmark runs were made for this guide.
+- Hardware specifications do not establish model fit, workload speed, available capacity, price, or a deployment recommendation. No customer AWS API calls or GPU benchmark runs were made for this guide. Codebase-assessor examples use synthetic files; no customer repository was assessed.
 
 ## Known unresolved source differences
 
